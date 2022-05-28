@@ -568,3 +568,19 @@ Received Import Request.
 Start importing Assets/Images/cosmos_white.png using Guid(18242483f5e34419c8f0317ebb9154c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35987ba388298692be2e1dac8c953f85') in 0.028059 seconds
   Import took 0.031736 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 636.876913 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48bee843c698d9ab3dae6dfd10a6554a') in 0.011199 seconds
+  Import took 0.021136 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.013978 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48bee843c698d9ab3dae6dfd10a6554a') in 0.002856 seconds
+  Import took 0.005965 seconds .
+
