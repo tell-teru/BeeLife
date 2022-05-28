@@ -520,3 +520,51 @@ System memory in use after: 159.0 MB.
 Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2319.
 Total: 1.800500 ms (FindLiveObjects: 0.221250 ms CreateObjectMapping: 0.043833 ms MarkObjects: 1.445875 ms  DeleteObjects: 0.087458 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 2610.955901 seconds.
+  path: Packages/com.unity.2d.animation
+  artifactKey: Guid(bb5c94055a953b6081dfc49350569eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Packages/com.unity.2d.animation using Guid(bb5c94055a953b6081dfc49350569eb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42812ea2a5b9b92e4c0d72094000e251') in 0.026765 seconds
+  Import took 0.041793 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1617.316345 seconds.
+  path: Assets/Images/蜂の巣.png
+  artifactKey: Guid(e3f3d207a720e454e87d7d1cfd6d0f8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/蜂の巣.png using Guid(e3f3d207a720e454e87d7d1cfd6d0f8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9e532bd1502532d16132f25d8673967') in 0.893961 seconds
+  Import took 0.908175 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3690.864989 seconds.
+  path: Assets/Scenes/Main
+  artifactKey: Guid(1ab0b30b9550945ae8f20c7bba3f8b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main using Guid(1ab0b30b9550945ae8f20c7bba3f8b2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '236b4c5531e13379d5c196f233a3f0b5') in 0.003866 seconds
+  Import took 0.040859 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.341205 seconds.
+  path: Assets/Scenes/Main.unity
+  artifactKey: Guid(be8515b8cbad240b0af820b594f80638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main.unity using Guid(be8515b8cbad240b0af820b594f80638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e4187b34975d39bed3a401860a69b55') in 0.004710 seconds
+  Import took 0.010157 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.728193 seconds.
+  path: Assets/Scenes/Main/LightingData.asset
+  artifactKey: Guid(ac7790a78f87141459749365eafc3363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Main/LightingData.asset using Guid(ac7790a78f87141459749365eafc3363) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb503ae3963d7f43483b5a71e5c24b21') in 0.094368 seconds
+  Import took 0.099469 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 440.062217 seconds.
+  path: Assets/Images/cosmos_white.png
+  artifactKey: Guid(18242483f5e34419c8f0317ebb9154c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/cosmos_white.png using Guid(18242483f5e34419c8f0317ebb9154c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35987ba388298692be2e1dac8c953f85') in 0.028059 seconds
+  Import took 0.031736 seconds .
+
