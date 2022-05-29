@@ -6,6 +6,7 @@ TagManager:
   tags:
   - NET
   - Flower
+  - Enemy
   layers:
   - Default
   - TransparentFX
