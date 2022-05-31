@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class EnemyGenerator : MonoBehaviour
 {
     public static EnemyGenerator instance;
+    PlayerController MituCount;
+    PlayerController HoneyCount;
 
     //敵プレハブ
     public GameObject enemyPrefab;
@@ -159,6 +161,8 @@ public class EnemyGenerator : MonoBehaviour
         {
             targetMesh.enabled = false;
             thisObjMesh.enabled = false;
+
+            PlayerController.HoneyCount -= 2;
         }
 
     }

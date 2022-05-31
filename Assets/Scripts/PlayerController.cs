@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static int MituCount;
+    public static int HoneyCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +26,33 @@ public class PlayerController : MonoBehaviour
     public void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
+
+        // タグがFlowerなら
+        if (collision.gameObject.tag == "Flower")
+        {
+            // Returnキー入力で
+            if (Input.GetKey(KeyCode.Return))
+            {
+                MituCount += 1;
+
+                // 所持できるMituは15まで
+                if(MituCount >= 15)
+                {
+                    return;
+                }
+            }
+        }
+
+        // タグがTargetなら
+        if (collision.gameObject.tag == "Target")
+        {
+            // Returnキー入力で
+            if (Input.GetKey(KeyCode.Return))
+            {
+                MituCount -= 1;
+                HoneyCount += 1;
+            }
+        }
+
     }
 }
