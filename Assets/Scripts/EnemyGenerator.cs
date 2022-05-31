@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyGenerator : MonoBehaviour
 {
     //敵プレハブ
     public GameObject enemyPrefab;
 
+    public GameObject targetObj;
+
+    [SerializeField] float speed;
+
     //時間間隔の最小値
     public float minTime = 2f;
     //時間間隔の最大値
-    public float maxTime = 5f;
+    public float maxTime = 10f;
 
 
     //X座標の最小値
@@ -32,11 +37,41 @@ public class EnemyGenerator : MonoBehaviour
     //経過時間
     private float time = 0f;
 
+
+    MeshRenderer targetMesh;
+    MeshRenderer thisObjMesh;
+
+    Coroutine coroutine;
+
+    float x_Abs;
+    float y_Abs;
+    float z_Abs;
+
+    [SerializeField]
+    float speedParameter = 10;
+
+    //てきのHP
+    int maxEneHP = 10;
+    int currentEneHP;
+
+    public Slider slider;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         //時間間隔を決定する
         interval = GetRandomTime();
+
+        targetMesh = targetObj.GetComponent<MeshRenderer>();
+        thisObjMesh = this.gameObject.GetComponent<MeshRenderer>();
+
+        //Sliderを満タンにする。
+        slider.value = 1;
+        //現在のHPを最大HPと同じに。
+        currentEneHP = maxEneHP;
+        Debug.Log("Start currentHp : " + currentEneHP);
     }
 
     // Update is called once per frame
@@ -60,6 +95,20 @@ public class EnemyGenerator : MonoBehaviour
             //次に発生する時間間隔を決定する
             interval = GetRandomTime();
         }
+
+        //自分の位置、ターゲット、速度
+        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
+
+
+        x_Abs = Mathf.Abs(this.gameObject.transform.position.x - targetObj.transform.position.x);
+        y_Abs = Mathf.Abs(this.gameObject.transform.position.y - targetObj.transform.position.y);
+        z_Abs = Mathf.Abs(this.gameObject.transform.position.z - targetObj.transform.position.z);
+
+        if (coroutine == null)
+        {
+            coroutine = StartCoroutine(MoveCoroutine());
+        }
+
     }
 
     //ランダムな時間を生成する関数
@@ -78,6 +127,52 @@ public class EnemyGenerator : MonoBehaviour
 
         //Vector3型のPositionを返す
         return new Vector3(x, y, z);
+    }
+
+
+    IEnumerator MoveCoroutine()
+    {
+        float speed = speedParameter * Time.deltaTime;
+
+        while (x_Abs > 0 || y_Abs > 0 || z_Abs > 0)
+        {
+
+            yield return new WaitForEndOfFrame();
+            this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetObj.transform.position, speed);
+        }
+
+        print("重なった");
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        //ターゲットにしたオブジェクトにタグをつけとく
+        if (other.gameObject.tag == "Target")
+        {
+            targetMesh.enabled = false;
+            thisObjMesh.enabled = false;
+        }
+
+
+        //Enemyタグのオブジェクトに触れると発動
+        if ( other.gameObject.tag == "Player")
+        {
+            //ダメージは1～100の中でランダムに決める。
+            //int damage = Random.Range(1, 100);
+            int damage = 1;
+            Debug.Log("damage : " + damage);
+
+
+            //現在のHPからダメージを引く
+            currentEneHP = currentEneHP - damage;
+            Debug.Log("After currentHp : " + currentEneHP);
+
+            //最大HPにおける現在のHPをSliderに反映。
+            //int同士の割り算は小数点以下は0になるので、
+            //(float)をつけてfloatの変数として振舞わせる。
+            slider.value = (float)currentEneHP / (float)maxEneHP; ;
+            Debug.Log("slider.value : " + slider.value);
+        }
     }
 
 
