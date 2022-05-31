@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class EnemyGenerator : MonoBehaviour
 {
+    public static EnemyGenerator instance;
+
     //敵プレハブ
     public GameObject enemyPrefab;
 
@@ -56,7 +58,13 @@ public class EnemyGenerator : MonoBehaviour
 
     public Slider slider;
 
-
+    public void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -153,9 +161,12 @@ public class EnemyGenerator : MonoBehaviour
             thisObjMesh.enabled = false;
         }
 
+    }
 
+    public void Damage()
+    {
         //Enemyタグのオブジェクトに触れると発動
-        if ( other.gameObject.tag == "Player")
+        if (gameObject.tag == "Player")
         {
             //ダメージは1～100の中でランダムに決める。
             //int damage = Random.Range(1, 100);
