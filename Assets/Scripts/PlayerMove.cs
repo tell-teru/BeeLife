@@ -5,9 +5,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     // プレイヤーのRigidbodyコンポーネントに紐づいている変数を宣言する
-    Rigidbody playerRigidbody;
+    Rigidbody2D playerRigidbody;
     //　プレイヤーが移動する向きを指定する実数を宣言する
-    Vector3 inputDirection;
+    Vector2 inputDirection;
     //　プレイヤーが移動する速さを指定する変数を宣言する
     float moveSpeed = 4.0f;
 
@@ -15,10 +15,10 @@ public class PlayerMove : MonoBehaviour
     void Start()
     {
         // inputDirection変数に(1, 0, 0)を代入
-        inputDirection = new Vector3(1, 0, 0);
+        inputDirection = new Vector2(1, 0);
 
         // playerRigigdBody変数にこのゲームのオブジェクトのRigidbodyコンポーネントを取得し代入する
-        playerRigidbody = this.gameObject.GetComponent<Rigidbody>();
+        playerRigidbody = this.gameObject.GetComponent<Rigidbody2D>();
 
     }
 
@@ -26,10 +26,9 @@ public class PlayerMove : MonoBehaviour
     void Update()
     {
         // キー入力から移動する向きをinputDirecton変数に代入
-        inputDirection = new Vector3(
+        inputDirection = new Vector2(
             Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical"),
-            0
+            Input.GetAxis("Vertical")
             );
     }
 
