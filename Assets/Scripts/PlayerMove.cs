@@ -1,40 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
-    // プレイヤーのRigidbodyコンポーネントに紐づいている変数を宣言する
-    Rigidbody2D playerRigidbody;
-    //　プレイヤーが移動する向きを指定する実数を宣言する
-    Vector2 inputDirection;
-    //　プレイヤーが移動する速さを指定する変数を宣言する
-    float moveSpeed = 4.0f;
 
-    // Start is called before the first frame update
+    // 速度
+    public float speed = 0.5f;
+
+    // Use this for initialization
     void Start()
     {
-        // inputDirection変数に(1, 0, 0)を代入
-        inputDirection = new Vector2(1, 0);
-
-        // playerRigigdBody変数にこのゲームのオブジェクトのRigidbodyコンポーネントを取得し代入する
-        playerRigidbody = this.gameObject.GetComponent<Rigidbody2D>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        // キー入力から移動する向きをinputDirecton変数に代入
-        inputDirection = new Vector2(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical")
-            );
+        // 移動処理
+        Move();
     }
 
-    private void FixedUpdate()
+    // 移動関数
+    void Move()
     {
-        // 移動する速さを表すvelocityに右辺を代入
-        playerRigidbody.velocity = inputDirection * moveSpeed;
+        // 現在位置をPositionに代入
+        Vector2 Position = transform.position;
+        // 左キーを押し続けていたら
+        if (Input.GetKey("left"))
+        {
+            // 代入したPositionに対して加算減算を行う
+            Position.x -= speed;
+        }
+        else if (Input.GetKey("right"))
+        { // 右キーを押し続けていたら
+          // 代入したPositionに対して加算減算を行う
+            Position.x += speed;
+        }
+        else if (Input.GetKey("up"))
+        { // 上キーを押し続けていたら
+          // 代入したPositionに対して加算減算を行う
+            Position.y += speed;
+        }
+        else if (Input.GetKey("down"))
+        { // 下キーを押し続けていたら
+          // 代入したPositionに対して加算減算を行う
+            Position.y -= speed;
+        }
+        // 現在の位置に加算減算を行ったPositionを代入する
+        transform.position = Position;
     }
+
+
 }
