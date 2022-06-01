@@ -15,7 +15,7 @@ public class SceneChange : MonoBehaviour
     void Update()
     {
         // シーンの名前がTitleなら
-        if (SceneManager.GetActiveScene().name == "Title" || SceneManager.GetActiveScene().name == "Result")
+        if (SceneManager.GetActiveScene().name == "Start")
         {
             // Spaceキーを押したならば
             if (Input.GetKeyDown(KeyCode.Space))
