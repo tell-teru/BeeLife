@@ -144,7 +144,7 @@ public class EnemyGenerator : MonoBehaviour
     {
         float speed = speedParameter * Time.deltaTime;
 
-        while (x_Abs > 0 || y_Abs > 0 || z_Abs > 0)
+        while (x_Abs > 0 || y_Abs > 0 || z_Abs == 0)
         {
 
             yield return new WaitForEndOfFrame();
@@ -163,6 +163,7 @@ public class EnemyGenerator : MonoBehaviour
             thisObjMesh.enabled = false;
 
             PlayerController.HoneyCount -= 2;
+            other.gameObject.SetActive(false);
         }
 
     }
