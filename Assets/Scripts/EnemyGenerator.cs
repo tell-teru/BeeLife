@@ -106,19 +106,6 @@ public class EnemyGenerator : MonoBehaviour
             interval = GetRandomTime();
         }
 
-        //自分の位置、ターゲット、速度
-        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
-
-
-        x_Abs = Mathf.Abs(this.gameObject.transform.position.x - targetObj.transform.position.x);
-        y_Abs = Mathf.Abs(this.gameObject.transform.position.y - targetObj.transform.position.y);
-        z_Abs = Mathf.Abs(this.gameObject.transform.position.z - targetObj.transform.position.z);
-
-        if (coroutine == null)
-        {
-            coroutine = StartCoroutine(MoveCoroutine());
-        }
-
     }
 
     //ランダムな時間を生成する関数
@@ -139,20 +126,6 @@ public class EnemyGenerator : MonoBehaviour
         return new Vector3(x, y, z);
     }
 
-
-    IEnumerator MoveCoroutine()
-    {
-        float speed = speedParameter * Time.deltaTime;
-
-        while (x_Abs > 0 || y_Abs > 0 || z_Abs == 0)
-        {
-
-            yield return new WaitForEndOfFrame();
-            this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, targetObj.transform.position, speed);
-        }
-
-        print("重なった");
-    }
 
     void OnTriggerEnter(Collider other)
     {
