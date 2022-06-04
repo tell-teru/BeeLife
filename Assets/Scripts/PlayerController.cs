@@ -33,17 +33,73 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    // Collisionは衝突
-    public void OnCollisionEnter(Collision collision)
+    //// Collisionは衝突
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    Debug.Log(collision.gameObject.name);
+
+    //    // タグがFlowerなら
+    //    if (collision.gameObject.tag == "Flower")
+    //    {
+    //        Debug.Log("Flower");
+
+    //        // Returnキー入力で
+    //        if (Input.GetKey(KeyCode.Return))
+    //        {
+    //            Debug.Log("おされた！");
+
+    //            MituCount += 1;
+    //            Debug.Log("MituCount : " + MituCount);
+
+    //            currentMitu += 1;        // 現在の所持蜜を増やす
+    //            slider.value = currentMitu;   // Sliderに現在HPを適用
+    //            Debug.Log("所持蜜のslider.value = " + slider.value);
+
+    //            // 所持できるMituは15まで
+    //            if (MituCount >= 20)
+    //            {
+    //                return;
+    //            }
+    //        }
+    //    }
+
+    //    // タグがTargetなら
+    //    if (collision.gameObject.tag == "Target")
+    //    {
+    //        // Returnキー入力で
+    //        if (Input.GetKey(KeyCode.Return))
+    //        {
+    //            MituCount -= 1;
+    //            HoneyCount += 1;
+
+    //            Debug.Log("MituCount : " + MituCount);
+    //            Debug.Log("HoneyCount : " + HoneyCount);
+
+    //            currentMitu -= 1;        // 現在の所持蜜を減らす
+    //            slider.value = currentMitu;   // Sliderに現在HPを適用
+    //            Debug.Log("所持蜜のslider.value = " + slider.value);
+    //        }
+    //    }
+
+    //}
+
+    // Triggerが侵入
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(collision.gameObject.name);
+        Debug.Log("今いるオブジェクト: " + other.gameObject.name);
+
+        Debug.Log(other.gameObject.name);
 
         // タグがFlowerなら
-        if (collision.gameObject.tag == "Flower")
+        if (other.gameObject.tag == "Flower")
         {
+            Debug.Log("Flower");
+
             // Returnキー入力で
-            if (Input.GetKey(KeyCode.Return))
+            if (Input.GetKey(KeyCode.Space))
             {
+                Debug.Log("おされた！");
+
                 MituCount += 1;
                 Debug.Log("MituCount : " + MituCount);
 
@@ -60,7 +116,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // タグがTargetなら
-        if (collision.gameObject.tag == "Target")
+        if (other.gameObject.tag == "Target")
         {
             // Returnキー入力で
             if (Input.GetKey(KeyCode.Return))
@@ -76,12 +132,5 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("所持蜜のslider.value = " + slider.value);
             }
         }
-
-    }
-
-    // Triggerが侵入
-    public void OnTriggerStay2D(Collider2D other)
-    {
-        Debug.Log("OnTriggerStay2D: " + other.gameObject.name);
     }
 }
