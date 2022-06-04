@@ -24,6 +24,17 @@ public class SceneChange : MonoBehaviour
                 ToMain();
             }
         }
+
+        //// シーンの名前がTitleなら
+        //if (SceneManager.GetActiveScene().name == "Main")
+        //{
+        //    //// HoneyCountがMaxならば
+        //    //if (PlayerController.currentHoney.value == 50)
+        //    //{
+        //    //    // ToMain関数を呼び出す
+        //    //    ToFinish();
+        //    //}
+        //}
     }
 
     public void ToMain()
@@ -32,9 +43,9 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
-    public void ToResult()
+    public void ToFinish()
     {
-        // resultシーンに移動する
-        SceneManager.LoadScene("Result");
+        // Finishシーンに移動する
+        SceneManager.LoadScene("Finish");
     }
 }

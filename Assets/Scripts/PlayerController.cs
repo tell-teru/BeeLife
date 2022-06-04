@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public Slider Mituslider;       // シーンに配置したSlider格納用
 
     private const int maxHoney = 50;	// 蜂のもてる最大値を20とする
-    private int currentHoney;
+    private static int currentHoney;
     public Slider Honeyslider;		// シーンに配置したSlider格納用
 
 
@@ -95,6 +96,19 @@ public class PlayerController : MonoBehaviour
                 Honeyslider.value = currentHoney;
                 Debug.Log("はちみつvalue = " + Honeyslider.value);
             }
+
+            if(currentHoney == 50)
+            {
+                // ToFinish関数を呼び出す
+                ToFinish();
+            }
         }
+
+    }
+
+    public void ToFinish()
+    {
+        // Finishシーンに移動する
+        SceneManager.LoadScene("Finish");
     }
 }
