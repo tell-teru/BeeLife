@@ -37,9 +37,24 @@ public class EnemyMove : MonoBehaviour
         Position = transform.position;
         // x += SPEED * cos(ラジアン)
         // y += SPEED * sin(ラジアン)
-        // これで特定の方向へ向かって進んでいく。
-        Position.x += speed.x * Mathf.Cos(rad);
-        Position.y += speed.y * Mathf.Sin(rad);
+
+        if(Position.x != targetObject.transform.position.x || Position.y != targetObject.transform.position.y)
+        {
+            // これで特定の方向へ向かって進んでいく。
+            Position.x += speed.x * Mathf.Cos(rad);
+            Position.y += speed.y * Mathf.Sin(rad);
+
+            if(Position.x == targetObject.transform.position.x || Position.y == targetObject.transform.position.y)
+            {
+                return;
+            }
+        }
+
+        //// これで特定の方向へ向かって進んでいく。
+        //Position.x += speed.x * Mathf.Cos(rad);
+        //Position.y += speed.y * Mathf.Sin(rad);
+
+
         // 現在の位置に加算減算を行ったPositionを代入する
         transform.position = Position;
     }

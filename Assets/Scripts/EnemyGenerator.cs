@@ -77,11 +77,11 @@ public class EnemyGenerator : MonoBehaviour
         targetMesh = targetObj.GetComponent<MeshRenderer>();
         thisObjMesh = this.gameObject.GetComponent<MeshRenderer>();
 
-        //Sliderを満タンにする。
-        slider.value = 1;
-        //現在のHPを最大HPと同じに。
-        currentEneHP = maxEneHP;
-        Debug.Log("Start currentHp : " + currentEneHP);
+        ////Sliderを満タンにする。
+        //slider.value = 1;
+        ////現在のHPを最大HPと同じに。
+        //currentEneHP = maxEneHP;
+        //Debug.Log("Start currentHp : " + currentEneHP);
     }
 
     // Update is called once per frame
@@ -94,10 +94,10 @@ public class EnemyGenerator : MonoBehaviour
         if (time > interval)
         {
             //enemyをインスタンス化する(生成する)
-            GameObject くま = Instantiate(enemyPrefab);
+            GameObject Bear = Instantiate(enemyPrefab);
 
             //生成した敵の座標を決定する(現状X=0,Y=10,Z=20の位置に出力)
-            くま.transform.position = GetRandomPosition();
+            Bear.transform.position = GetRandomPosition();
 
             //経過時間を初期化して再度時間計測を始める
             time = 0f;
