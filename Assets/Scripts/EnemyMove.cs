@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMove : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class EnemyMove : MonoBehaviour
 
     public float distance;
 
+    public PlayerController Pcon;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,8 @@ public class EnemyMove : MonoBehaviour
         rad = Mathf.Atan2(
             targetObject.transform.position.y - transform.position.y,
             targetObject.transform.position.x - transform.position.x);
+
+        Pcon = GameObject.Find("BEE").GetComponent<PlayerController>();
 
 
     }
@@ -61,5 +65,17 @@ public class EnemyMove : MonoBehaviour
 
         // 現在の位置に加算減算を行ったPositionを代入する
         transform.position = Position;
+    }
+
+    // Triggerが侵入
+    public void OnTriggerStay2D(Collider2D other)
+    {
+        //Debug.Log(other.gameObject.name);
+
+        // タグがTargetなら
+        if (other.gameObject.tag == "Target")
+        {
+            Pcon.minHoney(0.2f);
+        }
     }
 }

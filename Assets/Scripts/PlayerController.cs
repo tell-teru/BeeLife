@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public Slider Mituslider;       // シーンに配置したSlider格納用
 
     private const int maxHoney = 50;	// 蜂のもてる最大値を20とする
-    public static int currentHoney;
+    public static float currentHoney;
     public Slider Honeyslider;		// シーンに配置したSlider格納用
 
     public const int maxEneHP = 5; // 敵のHP最大値を5とする
@@ -73,11 +73,7 @@ public class PlayerController : MonoBehaviour
                 {
                     return;
                 }
-                //// 所持できるMituは15まで
-                //if (HoneyCount >= 20)
-                //{
-                //    return;
-                //}
+
             }
         }
 
@@ -128,11 +124,23 @@ public class PlayerController : MonoBehaviour
                     Destroy(other.gameObject);
                     currentEneHP = 5;
                 }
-
                 
             }
         }
 
+    }
+
+    public void minHoney(float damage)
+    {
+        currentHoney -= damage;
+        Honeyslider.value = currentHoney;
+
+        if (currentHoney <= 0)
+        {
+            return;
+        }
+
+        Debug.Log("はちみつ : " + currentHoney);
     }
 
     public void ToFinish()

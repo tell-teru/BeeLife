@@ -3380,7 +3380,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8682812947329318037, guid: 42542164a5a5b4f65b97be5bb13ab7ea, type: 3}
       propertyPath: speed
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8682812947329318037, guid: 42542164a5a5b4f65b97be5bb13ab7ea, type: 3}
       propertyPath: slider
