@@ -36,7 +36,8 @@ public class PlayerController : MonoBehaviour
     //// Collisionは衝突
     //public void OnCollisionEnter2D(Collision2D collision)
     //{
-    //    Debug.Log(collision.gameObject.name);
+    //    //Debug.Log(collision.gameObject.name);
+    //    Debug.Log("今いるオブジェクト: " + collision.gameObject.name);
 
     //    // タグがFlowerなら
     //    if (collision.gameObject.tag == "Flower")
@@ -88,7 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("今いるオブジェクト: " + other.gameObject.name);
 
-        Debug.Log(other.gameObject.name);
+        //Debug.Log(other.gameObject.name);
 
         // タグがFlowerなら
         if (other.gameObject.tag == "Flower")
@@ -96,7 +97,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Flower");
 
             // Returnキー入力で
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Return))
             {
                 Debug.Log("おされた！");
 
@@ -119,7 +120,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Target")
         {
             // Returnキー入力で
-            if (Input.GetKey(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 MituCount -= 1;
                 HoneyCount += 1;
