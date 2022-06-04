@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8513674170599570583}
   - component: {fileID: -3504185839361644825}
   - component: {fileID: 4137614055843900628}
+  - component: {fileID: -965118092164688344}
   m_Layer: 0
   m_Name: Bear
   m_TagString: Enemy
@@ -124,3 +125,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: {x: 0.05, y: 0.05}
   targetObject: {fileID: 4891387303264947104, guid: df877e5aba54545c680172009081b612, type: 3}
+  distance: 0
+--- !u!50 &-965118092164688344
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8513674170599570582}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

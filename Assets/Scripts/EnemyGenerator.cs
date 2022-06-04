@@ -127,40 +127,56 @@ public class EnemyGenerator : MonoBehaviour
     }
 
 
-    void OnTriggerEnter(Collider other)
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    //ターゲットにしたオブジェクトにタグをつけとく
+    //    if (other.gameObject.tag == "Target")
+    //    {
+    //        targetMesh.enabled = false;
+    //        thisObjMesh.enabled = false;
+
+    //        PlayerController.HoneyCount -= 2;
+    //        other.gameObject.SetActive(false);
+    //    }
+
+    //}
+
+    //public void Damage()
+    //{
+    //    //Enemyタグのオブジェクトに触れると発動
+    //    if (gameObject.tag == "Player")
+    //    {
+    //        //ダメージは1～100の中でランダムに決める。
+    //        //int damage = Random.Range(1, 100);
+    //        int damage = 1;
+    //        Debug.Log("damage : " + damage);
+
+
+    //        //現在のHPからダメージを引く
+    //        currentEneHP = currentEneHP - damage;
+    //        Debug.Log("After currentHp : " + currentEneHP);
+
+    //        //最大HPにおける現在のHPをSliderに反映。
+    //        //int同士の割り算は小数点以下は0になるので、
+    //        //(float)をつけてfloatの変数として振舞わせる。
+    //        slider.value = (float)currentEneHP / (float)maxEneHP; ;
+    //        //Debug.Log("slider.value : " + slider.value);
+    //    }
+    //}
+
+    // Triggerが侵入
+    public void OnTriggerStay2D(Collider2D other)
     {
-        //ターゲットにしたオブジェクトにタグをつけとく
+        Debug.Log(other.gameObject.name);
+
+        // タグがTargetなら
         if (other.gameObject.tag == "Target")
         {
-            targetMesh.enabled = false;
-            thisObjMesh.enabled = false;
 
-            PlayerController.HoneyCount -= 2;
-            other.gameObject.SetActive(false);
-        }
+            PlayerController.currentHoney -= 1;
 
-    }
-
-    public void Damage()
-    {
-        //Enemyタグのオブジェクトに触れると発動
-        if (gameObject.tag == "Player")
-        {
-            //ダメージは1～100の中でランダムに決める。
-            //int damage = Random.Range(1, 100);
-            int damage = 1;
-            Debug.Log("damage : " + damage);
-
-
-            //現在のHPからダメージを引く
-            currentEneHP = currentEneHP - damage;
-            Debug.Log("After currentHp : " + currentEneHP);
-
-            //最大HPにおける現在のHPをSliderに反映。
-            //int同士の割り算は小数点以下は0になるので、
-            //(float)をつけてfloatの変数として振舞わせる。
-            slider.value = (float)currentEneHP / (float)maxEneHP; ;
-            Debug.Log("slider.value : " + slider.value);
+            Debug.Log("はちみつ : " + PlayerController.currentHoney);
+           
         }
     }
 

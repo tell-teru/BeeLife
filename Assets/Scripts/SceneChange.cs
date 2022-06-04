@@ -25,16 +25,16 @@ public class SceneChange : MonoBehaviour
             }
         }
 
-        //// シーンの名前がTitleなら
-        //if (SceneManager.GetActiveScene().name == "Main")
-        //{
-        //// HoneyCountがMaxならば
-        //if (PlayerController.currentHoney.value == 50)
-        //{
-        //    // ToMain関数を呼び出す
-        //    ToFinish();
-        //}
-        //}
+        // シーンの名前がTitleなら
+        if (SceneManager.GetActiveScene().name == "Finish")
+        {
+            // Spaceキーを押したならば
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // ToStart関数を呼び出す
+                ToStart();
+            }
+        }
     }
 
     public void ToMain()
@@ -48,4 +48,11 @@ public class SceneChange : MonoBehaviour
         // Finishシーンに移動する
         SceneManager.LoadScene("Finish");
     }
+
+    public void ToStart()
+    {
+        // Finishシーンに移動する
+        SceneManager.LoadScene("Start");
+    }
+
 }

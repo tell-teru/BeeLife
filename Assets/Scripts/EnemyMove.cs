@@ -14,6 +14,8 @@ public class EnemyMove : MonoBehaviour
     // 現在位置を代入する為の変数
     private Vector2 Position;
 
+    public float distance;
+
 
     // Start is called before the first frame update
     void Start()
@@ -43,10 +45,12 @@ public class EnemyMove : MonoBehaviour
             // これで特定の方向へ向かって進んでいく。
             Position.x += speed.x * Mathf.Cos(rad);
             Position.y += speed.y * Mathf.Sin(rad);
+            distance = Vector2.Distance(targetObject.transform.position, Position);
 
-            if(Position.x == targetObject.transform.position.x || Position.y == targetObject.transform.position.y)
+            if (distance <=  0.2)
             {
                 return;
+
             }
         }
 

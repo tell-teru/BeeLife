@@ -14,7 +14,7 @@ public class PlayerController : MonoBehaviour
     public Slider Mituslider;       // シーンに配置したSlider格納用
 
     private const int maxHoney = 50;	// 蜂のもてる最大値を20とする
-    private int currentHoney;
+    public static int currentHoney;
     public Slider Honeyslider;		// シーンに配置したSlider格納用
 
     public const int maxEneHP = 5; // 敵のHP最大値を5とする
