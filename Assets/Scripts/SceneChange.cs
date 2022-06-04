@@ -28,12 +28,12 @@ public class SceneChange : MonoBehaviour
         //// シーンの名前がTitleなら
         //if (SceneManager.GetActiveScene().name == "Main")
         //{
-        //    //// HoneyCountがMaxならば
-        //    //if (PlayerController.currentHoney.value == 50)
-        //    //{
-        //    //    // ToMain関数を呼び出す
-        //    //    ToFinish();
-        //    //}
+        //// HoneyCountがMaxならば
+        //if (PlayerController.currentHoney.value == 50)
+        //{
+        //    // ToMain関数を呼び出す
+        //    ToFinish();
+        //}
         //}
     }
 

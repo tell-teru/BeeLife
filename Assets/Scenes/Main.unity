@@ -809,6 +809,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Mituslider: {fileID: 883151673}
   Honeyslider: {fileID: 455260007}
+  currentEneHP: 0
 --- !u!61 &337657473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3458,6 +3459,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8682812947329318037, guid: 42542164a5a5b4f65b97be5bb13ab7ea, type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8682812947329318037, guid: 42542164a5a5b4f65b97be5bb13ab7ea, type: 3}
       propertyPath: slider
       value: 
       objectReference: {fileID: 0}
@@ -3465,6 +3470,10 @@ PrefabInstance:
       propertyPath: enemyPrefab
       value: 
       objectReference: {fileID: 8513674170599570582, guid: 91462621bd2d1404aa742d1c95d2ed12, type: 3}
+    - target: {fileID: 8682812947329318037, guid: 42542164a5a5b4f65b97be5bb13ab7ea, type: 3}
+      propertyPath: speedParameter
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42542164a5a5b4f65b97be5bb13ab7ea, type: 3}
 --- !u!1001 &4891387303443997651

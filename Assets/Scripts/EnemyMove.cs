@@ -6,7 +6,7 @@ public class EnemyMove : MonoBehaviour
 {
 
     // 速度
-    public Vector2 speed = new Vector2(0.05f, 0.05f);
+    public Vector2 speed = new Vector2(0.01f, 0.01f);
     // ターゲットとなるオブジェクト
     public GameObject targetObject;
     // ラジアン変数

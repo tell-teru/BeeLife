@@ -14,8 +14,11 @@ public class PlayerController : MonoBehaviour
     public Slider Mituslider;       // シーンに配置したSlider格納用
 
     private const int maxHoney = 50;	// 蜂のもてる最大値を20とする
-    private static int currentHoney;
+    private int currentHoney;
     public Slider Honeyslider;		// シーンに配置したSlider格納用
+
+    public const int maxEneHP = 5; // 敵のHP最大値を5とする
+    public int currentEneHP;
 
 
     // Start is called before the first frame update
@@ -28,18 +31,20 @@ public class PlayerController : MonoBehaviour
         Honeyslider.maxValue = maxHoney;    // Sliderの最大値を蜂の持てる最大値と合わせる
         currentHoney = 0;      // 初期状態は0
         Honeyslider.value = currentHoney;	// Sliderの初期状態を設定（0）
+
+        currentEneHP = maxEneHP;      // 初期状態はmax
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Spaceキー入力で　EnemyGeneratorのDamage関数(EneHP - 1 するやつ)呼び出し
-        if (Input.GetKey(KeyCode.Space))
-        {
-            Debug.Log("Spaceキーが押された");
+        //// Spaceキー入力で　EnemyGeneratorのDamage関数(EneHP - 1 するやつ)呼び出し
+        //if (Input.GetKey(KeyCode.Space))
+        //{
+        //    Debug.Log("Spaceキーが押された");
 
-            EnemyGenerator.instance.Damage();
-        }
+        //    EnemyGenerator.instance.Damage();
+        //}
     }
 
 
@@ -68,11 +73,11 @@ public class PlayerController : MonoBehaviour
                 {
                     return;
                 }
-                // 所持できるMituは15まで
-                if (HoneyCount >= 20)
-                {
-                    return;
-                }
+                //// 所持できるMituは15まで
+                //if (HoneyCount >= 20)
+                //{
+                //    return;
+                //}
             }
         }
 
@@ -82,25 +87,49 @@ public class PlayerController : MonoBehaviour
             // Returnキー入力で
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                MituCount -= 1;
-                HoneyCount += 1;
+                if(MituCount > 0)
+                {
+                    MituCount -= 1;
+                    HoneyCount += 1;
 
-                Debug.Log("MituCount : " + MituCount);
-                Debug.Log("HoneyCount : " + HoneyCount);
+                    Debug.Log("MituCount : " + MituCount);
+                    Debug.Log("HoneyCount : " + HoneyCount);
 
-                currentMitu -= 1;        // 現在の所持蜜を減らす
-                Mituslider.value = currentMitu;   // Sliderに現在HPを適用
-                Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+                    currentMitu -= 1;        // 現在の所持蜜を減らす
+                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
 
-                currentHoney += 1;
-                Honeyslider.value = currentHoney;
-                Debug.Log("はちみつvalue = " + Honeyslider.value);
+                    currentHoney += 1;
+                    Honeyslider.value = currentHoney;
+                    Debug.Log("はちみつvalue = " + Honeyslider.value);
+                }
+                
             }
 
             if(currentHoney == 50)
             {
                 // ToFinish関数を呼び出す
                 ToFinish();
+            }
+        }
+
+        // タグがEnemyなら
+        if (other.gameObject.tag == "Enemy")
+        {
+
+            // Returnキー入力で
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                currentEneHP -= 1;
+                Debug.Log("敵HP : " + currentEneHP);
+
+                if(currentEneHP == 0)
+                {
+                    Destroy(other.gameObject);
+                    currentEneHP = 5;
+                }
+
+                
             }
         }
 
