@@ -17,9 +17,9 @@ public class EnemyGenerator : MonoBehaviour
     [SerializeField] float speed;
 
     //時間間隔の最小値
-    public float minTime = 10f;
+    public float minTime = 50f;
     //時間間隔の最大値
-    public float maxTime = 30f;
+    public float maxTime = 100f;
 
 
     //X座標の最小値

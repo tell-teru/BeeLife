@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour
     //}
 
     // Triggerが侵入
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log("今いるオブジェクト: " + other.gameObject.name);
 
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
             Debug.Log("Flower");
 
             // Returnキー入力で
-            if (Input.GetKey(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 Debug.Log("おされた！");
 
