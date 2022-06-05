@@ -33,17 +33,17 @@ public class PlayerMove : MonoBehaviour
             // 代入したPositionに対して加算減算を行う
             Position.x -= speed;
         }
-        else if (Input.GetKey("right"))
+        if (Input.GetKey("right"))
         { // 右キーを押し続けていたら
           // 代入したPositionに対して加算減算を行う
             Position.x += speed;
         }
-        else if (Input.GetKey("up"))
+        if (Input.GetKey("up"))
         { // 上キーを押し続けていたら
           // 代入したPositionに対して加算減算を行う
             Position.y += speed;
         }
-        else if (Input.GetKey("down"))
+        if (Input.GetKey("down"))
         { // 下キーを押し続けていたら
           // 代入したPositionに対して加算減算を行う
             Position.y -= speed;

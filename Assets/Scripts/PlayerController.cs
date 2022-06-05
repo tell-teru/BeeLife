@@ -102,7 +102,7 @@ public class PlayerController : MonoBehaviour
                 
             }
 
-            if(currentHoney == 50)
+            if(currentHoney >= 50)
             {
                 // ToFinish関数を呼び出す
                 ToFinish();

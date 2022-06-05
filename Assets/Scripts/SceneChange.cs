@@ -21,6 +21,22 @@ public class SceneChange : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 // ToMain関数を呼び出す
+                ToRule();
+            }
+            if (Input.GetKeyDown(KeyCode.Return))
+            {
+                // ToMain関数を呼び出す
+                ToMain();
+            }
+        }
+
+        // シーンの名前がTitleなら
+        if (SceneManager.GetActiveScene().name == "Rule")
+        {
+            // Spaceキーを押したならば
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                // ToMain関数を呼び出す
                 ToMain();
             }
         }
@@ -43,11 +59,18 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("Main");
     }
 
+    public void ToRule()
+    {
+        // Finishシーンに移動する
+        SceneManager.LoadScene("Rule");
+    }
+
     public void ToFinish()
     {
         // Finishシーンに移動する
         SceneManager.LoadScene("Finish");
     }
+
 
     public void ToStart()
     {
