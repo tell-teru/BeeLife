@@ -14,18 +14,22 @@ public class CameraZoom : MonoBehaviour
     {
         tf = this.gameObject.GetComponent<Transform>(); //Main CameraのTransformを取得する。
         cam = this.gameObject.GetComponent<Camera>(); //Main CameraのCameraを取得する。
+
+        Debug.Log("かめら");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.I)) //Iキーが押されていれば
+        if (Input.GetKey(KeyCode.E)) //Eキーが押されていれば
         {
-            cam.orthographicSize = cam.orthographicSize - 1.0f; //ズームイン。
+            cam.orthographicSize = cam.orthographicSize - 0.2f; //ズームイン。
+            Debug.Log("いん");
         }
-        else if (Input.GetKey(KeyCode.O)) //Oキーが押されていれば
+        else if (Input.GetKey(KeyCode.W)) //Wキーが押されていれば
         {
-            cam.orthographicSize = cam.orthographicSize + 1.0f; //ズームアウト。
+            cam.orthographicSize = cam.orthographicSize + 0.2f; //ズームアウト。
+            Debug.Log("あうと");
         }
     }
 }
