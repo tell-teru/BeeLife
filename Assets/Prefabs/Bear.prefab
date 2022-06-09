@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8513674170599570582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -34.4, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -126,6 +126,7 @@ MonoBehaviour:
   speed: {x: 0.05, y: 0.05}
   targetObject: {fileID: 4891387303264947104, guid: df877e5aba54545c680172009081b612, type: 3}
   distance: 0
+  Pcon: {fileID: 0}
 --- !u!50 &-965118092164688344
 Rigidbody2D:
   serializedVersion: 4

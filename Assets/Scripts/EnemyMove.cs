@@ -56,6 +56,11 @@ public class EnemyMove : MonoBehaviour
                 return;
 
             }
+
+            //if (other.gameObject.tag == "Player")
+            //{
+            //    return;
+            //}
         }
 
         //// これで特定の方向へ向かって進んでいく。
@@ -72,10 +77,18 @@ public class EnemyMove : MonoBehaviour
     {
         //Debug.Log(other.gameObject.name);
 
+
+        if (other.gameObject.tag == "Player")
+        {
+            return;
+        }
+
+
         // タグがTargetなら
         if (other.gameObject.tag == "Target")
         {
             Pcon.minHoney(0.2f);
         }
+
     }
 }
