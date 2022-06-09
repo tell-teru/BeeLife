@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
 {
 
     // 速度
-    public float speed = 0.5f;
+    public float speed = 0.2f;
 
     // Use this for initialization
     void Start()

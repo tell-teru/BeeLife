@@ -58,23 +58,112 @@ public class PlayerController : MonoBehaviour
         {
             //Debug.Log("Flower");
 
-            // Returnキー入力で
-            if (Input.GetKeyDown(KeyCode.Return))
+            if(other.gameObject.name == "RedFlowers")
             {
-                MituCount += 1;
-                Debug.Log("MituCount : " + MituCount);
-
-                currentMitu += 1;        // 現在の所持蜜を増やす
-                Mituslider.value = currentMitu;   // Sliderに現在HPを適用
-                Debug.Log("所持蜜のslider.value = " + Mituslider.value);
-
-                // 所持できるMituは15まで
-                if (MituCount >= 20)
+                // LeftShiftキー入力で
+                if (Input.GetKeyDown(KeyCode.LeftShift))
                 {
-                    return;
+                    MituCount += 1;
+                    Debug.Log("MituCount : " + MituCount);
+
+                    currentMitu += 1;        // 現在の所持蜜を増やす
+                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+
+                    // 所持できるMituは15まで
+                    if (MituCount >= 20)
+                    {
+                        return;
+                    }
+
                 }
 
             }
+
+            if (other.gameObject.name == "WhiteFlowers")
+            {
+                // LeftShiftキー入力で
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    MituCount += 1;
+                    Debug.Log("MituCount : " + MituCount);
+
+                    currentMitu += 1;        // 現在の所持蜜を増やす
+                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+
+                    // 所持できるMituは15まで
+                    if (MituCount >= 20)
+                    {
+                        return;
+                    }
+
+                }
+
+            }
+            if (other.gameObject.name == "BlueFlowers")
+            {
+                // LeftShiftキー入力で
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    MituCount += 1;
+                    Debug.Log("MituCount : " + MituCount);
+
+                    currentMitu += 1;        // 現在の所持蜜を増やす
+                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+
+                    // 所持できるMituは15まで
+                    if (MituCount >= 20)
+                    {
+                        return;
+                    }
+
+                }
+
+            }
+
+            if (other.gameObject.name == "PinkFlowers")
+            {
+                // LeftShiftキー入力で
+                if (Input.GetKeyDown(KeyCode.LeftShift))
+                {
+                    MituCount += 1;
+                    Debug.Log("MituCount : " + MituCount);
+
+                    currentMitu += 1;        // 現在の所持蜜を増やす
+                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+
+                    // 所持できるMituは15まで
+                    if (MituCount >= 20)
+                    {
+                        return;
+                    }
+
+                }
+
+            }
+
+
+
+            //// LeftShiftキー入力で
+            //if (Input.GetKeyDown(KeyCode.LeftShift))
+            //{
+            //    MituCount += 1;
+            //    Debug.Log("MituCount : " + MituCount);
+
+            //    currentMitu += 1;        // 現在の所持蜜を増やす
+            //    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+            //    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+
+            //    // 所持できるMituは15まで
+            //    if (MituCount >= 20)
+            //    {
+            //        return;
+            //    }
+
+            //}
         }
 
         // タグがTargetなら
