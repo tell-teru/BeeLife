@@ -20,8 +20,9 @@ public class PlayerController : MonoBehaviour
     public const int maxEneHP = 5; // 敵のHP最大値を5とする
     public int currentEneHP;
 
+    public float FlushTime = 0.0f;
+    public Image image;
 
-    public FlushController Flucon;
 
 
     // Start is called before the first frame update
@@ -37,8 +38,6 @@ public class PlayerController : MonoBehaviour
 
         currentEneHP = maxEneHP;      // 初期状態はmax
 
-        // BEE オブジェクトの　FlushController　コンポネント
-        Flucon = GameObject.Find("BEE").GetComponent<FlushController>();
     }
 
     // Update is called once per frame
@@ -212,8 +211,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("はちみつ : " + currentHoney);
 
-
-        Flucon.Alert();
+        Alert();
 
     }
 
@@ -221,5 +219,23 @@ public class PlayerController : MonoBehaviour
     {
         // Finishシーンに移動する
         SceneManager.LoadScene("Finish");
+    }
+
+
+    public void Alert()
+    {
+        if (FlushTime == 0.0f)
+        {
+            this.image.color = new Color(0.5f, 0f, 0f, 0.5f);
+
+            FlushTime += 1.0f;
+        }
+        else if (FlushTime == 1.0f)
+        {
+            this.image.color = Color.Lerp(this.image.color, Color.clear, Time.deltaTime);
+
+            FlushTime = 0.0f;
+        }
+
     }
 }
