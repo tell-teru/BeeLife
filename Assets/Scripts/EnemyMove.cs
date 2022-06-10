@@ -51,7 +51,7 @@ public class EnemyMove : MonoBehaviour
             Position.y += speed.y * Mathf.Sin(rad);
             distance = Vector2.Distance(targetObject.transform.position, Position);
 
-            if (distance <=  0.2)
+            if (distance <=  0.1)
             {
                 return;
 
@@ -77,10 +77,14 @@ public class EnemyMove : MonoBehaviour
     {
         //Debug.Log(other.gameObject.name);
 
-
+        // くまとはちが接触してる時にくまの動きが止まる
+        // できてない！！！
         if (other.gameObject.tag == "Player")
         {
-            return;
+            //return
+
+            Position.x += 0;
+            Position.y += 0;
         }
 
 

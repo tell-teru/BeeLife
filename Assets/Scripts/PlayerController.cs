@@ -170,7 +170,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Target")
         {
             // Returnキー入力で
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 if(MituCount > 0)
                 {
