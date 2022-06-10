@@ -906,6 +906,7 @@ MonoBehaviour:
   Mituslider: {fileID: 883151673}
   Honeyslider: {fileID: 455260007}
   currentEneHP: 0
+  Flucon: {fileID: 0}
 --- !u!61 &337657473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1194,7 +1195,6 @@ GameObject:
   - component: {fileID: 490116438}
   - component: {fileID: 490116437}
   - component: {fileID: 490116440}
-  - component: {fileID: 490116439}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1234,7 +1234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4117647}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1259,18 +1259,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 490116435}
   m_CullTransparentMesh: 1
---- !u!114 &490116439
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 490116435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecf471ba8d5e84912a156af9be757e81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &490116440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,6 +1271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecf471ba8d5e84912a156af9be757e81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FlushTime: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

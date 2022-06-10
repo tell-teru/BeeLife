@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     public int currentEneHP;
 
 
+    public FlushController Flucon;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,18 +36,15 @@ public class PlayerController : MonoBehaviour
         Honeyslider.value = currentHoney;	// Sliderの初期状態を設定（0）
 
         currentEneHP = maxEneHP;      // 初期状態はmax
+
+        // BEE オブジェクトの　FlushController　コンポネント
+        Flucon = GameObject.Find("BEE").GetComponent<FlushController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //// Spaceキー入力で　EnemyGeneratorのDamage関数(EneHP - 1 するやつ)呼び出し
-        //if (Input.GetKey(KeyCode.Space))
-        //{
-        //    Debug.Log("Spaceキーが押された");
 
-        //    EnemyGenerator.instance.Damage();
-        //}
     }
 
 
@@ -145,25 +145,6 @@ public class PlayerController : MonoBehaviour
 
             }
 
-
-
-            //// LeftShiftキー入力で
-            //if (Input.GetKeyDown(KeyCode.LeftShift))
-            //{
-            //    MituCount += 1;
-            //    Debug.Log("MituCount : " + MituCount);
-
-            //    currentMitu += 1;        // 現在の所持蜜を増やす
-            //    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
-            //    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
-
-            //    // 所持できるMituは15まで
-            //    if (MituCount >= 20)
-            //    {
-            //        return;
-            //    }
-
-            //}
         }
 
         // タグがTargetなら
@@ -230,6 +211,10 @@ public class PlayerController : MonoBehaviour
         }
 
         Debug.Log("はちみつ : " + currentHoney);
+
+
+        Flucon.Alert();
+
     }
 
     public void ToFinish()
