@@ -19,6 +19,7 @@ public class EnemyMove : MonoBehaviour
 
     public PlayerController Pcon;
 
+    // くまとBeeが接触してる時動かなくするためのフラグ
     public bool BearMove;
 
     // Start is called before the first frame update
@@ -47,34 +48,33 @@ public class EnemyMove : MonoBehaviour
         // x += SPEED * cos(ラジアン)
         // y += SPEED * sin(ラジアン)
 
-        if(Position.x != targetObject.transform.position.x || Position.y != targetObject.transform.position.y)
+        if(BearMove == true)
         {
-            // これで特定の方向へ向かって進んでいく。
-            Position.x += speed.x * Mathf.Cos(rad);
-            Position.y += speed.y * Mathf.Sin(rad);
-            distance = Vector2.Distance(targetObject.transform.position, Position);
-
-            if (distance <=  0.2)
+            if (Position.x != targetObject.transform.position.x || Position.y != targetObject.transform.position.y)
             {
+                // これで特定の方向へ向かって進んでいく。
+                Position.x += speed.x * Mathf.Cos(rad);
+                Position.y += speed.y * Mathf.Sin(rad);
+                distance = Vector2.Distance(targetObject.transform.position, Position);
 
-                BearMove = false;
-                return;
+                if (distance <= 0.2)
+                {
+
+                    BearMove = false;
+                    return;
+
+                }
 
             }
-
-            //if (other.gameObject.tag == "Player")
-            //{
-            //    return;
-            //}
         }
 
-        //// これで特定の方向へ向かって進んでいく。
-        //Position.x += speed.x * Mathf.Cos(rad);
-        //Position.y += speed.y * Mathf.Sin(rad);
+
 
 
         // 現在の位置に加算減算を行ったPositionを代入する
         transform.position = Position;
+
+
     }
 
     // Triggerが侵入
@@ -86,12 +86,12 @@ public class EnemyMove : MonoBehaviour
         // できてない！！！
         if (other.gameObject.tag == "Player")
         {
-            //return
-
-            //Position.x += 0;
-            //Position.y += 0;
 
             BearMove = false;
+        }
+        else if(other.gameObject.tag != "Player")
+        {
+            BearMove = true;
         }
 
 
