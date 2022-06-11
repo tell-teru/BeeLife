@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     public float FlushTime = 0.0f;
     public Image image;
 
+    // テキスト指定
+    public Text HoneyText;
+    public Text MituText;
+
 
 
     // Start is called before the first frame update
@@ -43,7 +47,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HoneyText.text = HoneyCount.ToString("0") + "/" + maxHoney.ToString("0") + "\n" + "\n" + "Honey";
 
+        MituText.text = "みつ     " + MituCount.ToString("0") + "/" + maxMitu.ToString("0");
     }
 
 
@@ -233,6 +239,8 @@ public class PlayerController : MonoBehaviour
         else if (FlushTime == 1.0f)
         {
             this.image.color = Color.Lerp(this.image.color, Color.clear, Time.deltaTime);
+
+            //this.image.color = Color.Lerp(this.image.color, Color.clear, 1);
 
             FlushTime = 0.0f;
         }

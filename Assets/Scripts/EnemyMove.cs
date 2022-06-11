@@ -19,6 +19,8 @@ public class EnemyMove : MonoBehaviour
 
     public PlayerController Pcon;
 
+    public bool BearMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class EnemyMove : MonoBehaviour
 
         Pcon = GameObject.Find("BEE").GetComponent<PlayerController>();
 
+        BearMove = true;
 
     }
 
@@ -51,8 +54,10 @@ public class EnemyMove : MonoBehaviour
             Position.y += speed.y * Mathf.Sin(rad);
             distance = Vector2.Distance(targetObject.transform.position, Position);
 
-            if (distance <=  0.1)
+            if (distance <=  0.005)
             {
+
+                BearMove = false;
                 return;
 
             }
@@ -83,8 +88,10 @@ public class EnemyMove : MonoBehaviour
         {
             //return
 
-            Position.x += 0;
-            Position.y += 0;
+            //Position.x += 0;
+            //Position.y += 0;
+
+            BearMove = false;
         }
 
 
