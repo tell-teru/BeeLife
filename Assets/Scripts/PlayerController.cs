@@ -211,13 +211,18 @@ public class PlayerController : MonoBehaviour
 
     public void minHoney(float damage)
     {
-        currentHoney -= damage;
-        Honeyslider.value = currentHoney;
-
-        if (currentHoney <= 0)
+        if(currentHoney > 0)
         {
-            return;
+            currentHoney -= damage;
+            Honeyslider.value = currentHoney;
         }
+        //currentHoney -= damage;
+        //Honeyslider.value = currentHoney;
+
+        //if (currentHoney <= 0)
+        //{
+        //    return;
+        //}
 
         Debug.Log("はちみつ : " + currentHoney);
 
