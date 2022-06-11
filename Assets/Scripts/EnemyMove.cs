@@ -68,9 +68,6 @@ public class EnemyMove : MonoBehaviour
             }
         }
 
-
-
-
         // 現在の位置に加算減算を行ったPositionを代入する
         transform.position = Position;
 
