@@ -17,7 +17,7 @@ public class ScoreTime : MonoBehaviour
 
         Time = GameObject.Find("BEE").GetComponent<Timer>();
 
-        ScoreText.text = "はちみつ" + "\n" + "Time :  " + Time.ScoreMin.ToString("00") + ":" + Time.ScoreSec.ToString("00");
+        //ScoreText.text = "はちみつ" + "\n" + "Time :  " + Time.ScoreMin.ToString("00") + ":" + Time.ScoreSec.ToString("00");
     }
 
     // Update is called once per frame
