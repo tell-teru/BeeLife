@@ -17,15 +17,6 @@ public class Timer : MonoBehaviour
     private float oldSeconds;
     //　タイマー表示用テキスト
     public Text timerText;
-    ////　Score表示用テキスト
-    //public Text ScoreText;
-
-    public float bestTime;
-
-    // BestTimeのPlayerPrefs
-    const string BESTTIME_KEY = "BESTTIME";
-
-    //public static ScoreMin;
 
     public bool StopTime;
 
@@ -40,11 +31,6 @@ public class Timer : MonoBehaviour
         StopTime = true;
 
         timerText = GetComponentInChildren<Text>();
-
-        //var ScoreMin = PlayerPrefs.GetInt("Time min", minute);
-        //var ScoreSec = PlayerPrefs.GetInt("Time sec", ((int)seconds));
-
-        //ScoreText.text = "はちみつ" + "\n" + "Time :  " + ScoreMin.ToString("00") + ":" + ScoreSec.ToString("00");
     }
 
     // Update is called once per frame
@@ -63,27 +49,10 @@ public class Timer : MonoBehaviour
             {
                 timerText.text = minute.ToString("00") + ":" + ((int)seconds).ToString("00");
 
-                //PlayerPrefs.SetInt("Time min", minute);
-                //PlayerPrefs.SetInt("Time sec", ((int)seconds));
-
-
                 if (SceneManager.GetActiveScene().name == "Finish")
                 {
-                    PlayerPrefs.SetInt("Time min", minute);
-                    PlayerPrefs.SetInt("Time sec", ((int)seconds));
+                    //StopTime = false;
 
-
-                    StopTime = false;
-
-                    var ScoreMin = PlayerPrefs.GetInt("Time min", minute);
-                    var ScoreSec = PlayerPrefs.GetInt("Time sec", ((int)seconds));
-
-                    Debug.Log("StopTime");
-
-                    Debug.Log("min : " + ScoreMin);
-                    Debug.Log("sec : " + ScoreSec);
-
-                    //Debug.Log("Time : " + Time.time);
                 }
             }
             oldSeconds = seconds;

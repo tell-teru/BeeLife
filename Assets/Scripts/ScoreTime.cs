@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class ScoreTime : MonoBehaviour
 {
 
-    public Timer Time;
 
     //　Score表示用テキスト
     public Text ScoreText;
@@ -15,9 +14,8 @@ public class ScoreTime : MonoBehaviour
     void Start()
     {
 
-        Time = GameObject.Find("BEE").GetComponent<Timer>();
+        ScoreText.text = "経過時間 : " + Timer.minute.ToString("00") + ":" + ((int)Timer.seconds).ToString("00");
 
-        //ScoreText.text = "はちみつ" + "\n" + "Time :  " + Time.ScoreMin.ToString("00") + ":" + Time.ScoreSec.ToString("00");
     }
 
     // Update is called once per frame
