@@ -575,9 +575,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u79FB\u52D5             : \u77E2\u5370\u30AD\u30FC\n\u307F\u3064\u3092\u96C6\u3081\u308B      
-    : \u82B1\u306E\u4E0A\u3067Enter\n\u306F\u3061\u307F\u3064\u3092\u751F\u6210  
-    : \u5DE3\u306E\u4E0A\u3067Enter\n             \u6575\u6483\u9000          : \u304F\u307E\u306E\u4E0A\u3067Space"
+  m_Text: "\u79FB\u52D5 \u3000\u3000\u3000    : \u77E2\u5370\u30AD\u30FC\n\u307F\u3064\u3092\u96C6\u3081\u308B      
+    : \u82B1\u306E\u4E0A\u3067LeftSpace\n\u306F\u3061\u307F\u3064\u3092\u751F\u6210  
+    : \u5DE3\u306E\u4E0A\u3067LeftSpace\n             \u6575\u6483\u9000         
+    : \u304F\u307E\u306E\u4E0A\u3067Space"
 --- !u!222 &888493390
 CanvasRenderer:
   m_ObjectHideFlags: 0

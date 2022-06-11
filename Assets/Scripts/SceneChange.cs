@@ -26,7 +26,7 @@ public class SceneChange : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Return))
             {
                 // ToMain関数を呼び出す
-                ToMain();
+                ToRule();
             }
         }
 

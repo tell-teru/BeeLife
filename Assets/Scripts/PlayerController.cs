@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     public Text MituText;
     public Text EneHPText;
 
+    public bool ABear;
+
 
 
     // Start is called before the first frame update
@@ -42,6 +44,8 @@ public class PlayerController : MonoBehaviour
         Honeyslider.value = currentHoney;	// Sliderの初期状態を設定（0）
 
         currentEneHP = maxEneHP;      // 初期状態はmax
+
+        ABear = false;
 
     }
 
@@ -220,6 +224,10 @@ public class PlayerController : MonoBehaviour
                 {
                     Destroy(other.gameObject);
                     currentEneHP = 5;
+
+                    ABear = false;
+
+                    Alert();
                 }
                 
             }
@@ -237,6 +245,8 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("はちみつ : " + currentHoney);
 
+
+        ABear = true;
         Alert();
 
     }
@@ -250,19 +260,14 @@ public class PlayerController : MonoBehaviour
 
     public void Alert()
     {
-        if (FlushTime == 0.0f)
+        if (ABear == true)
         {
             this.image.color = new Color(0.5f, 0f, 0f, 0.5f);
-
-            FlushTime += 1.0f;
         }
-        else if (FlushTime == 1.0f)
+        else if (ABear == false)
         {
-            this.image.color = Color.Lerp(this.image.color, Color.clear, Time.deltaTime);
-
-            //this.image.color = Color.Lerp(this.image.color, Color.clear, 1);
-
-            FlushTime = 0.0f;
+            this.image.color = new Color(0.5f, 0f, 0f, 0f);
+            Debug.Log(" image ");
         }
 
     }
