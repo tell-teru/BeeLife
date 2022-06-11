@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HoneyText.text = HoneyCount.ToString("0") + "/" + maxHoney.ToString("0") + "\n" + "\n" + "Honey";
+        HoneyText.text = currentHoney.ToString("0") + "/" + maxHoney.ToString("0") + "\n" + "\n" + "Honey";
 
         MituText.text = "みつ     " + MituCount.ToString("0") + "/" + maxMitu.ToString("0");
     }

@@ -54,7 +54,7 @@ public class EnemyMove : MonoBehaviour
             Position.y += speed.y * Mathf.Sin(rad);
             distance = Vector2.Distance(targetObject.transform.position, Position);
 
-            if (distance <=  0.005)
+            if (distance <=  0.2)
             {
 
                 BearMove = false;
