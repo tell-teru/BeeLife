@@ -66,89 +66,107 @@ public class PlayerController : MonoBehaviour
 
             if(other.gameObject.name == "RedFlowers")
             {
-                // LeftShiftキー入力で
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+
+                if(MituCount < 20)
                 {
-                    MituCount += 3;
-                    Debug.Log("MituCount : " + MituCount);
-
-                    currentMitu += 3;        // 現在の所持蜜を増やす
-                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
-                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
-
-                    // 所持できるMituは15まで
-                    if (MituCount >= 20)
+                    // LeftShiftキー入力で
+                    if (Input.GetKeyDown(KeyCode.LeftShift))
                     {
-                        return;
+                        MituCount += 3;
+                        Debug.Log("MituCount : " + MituCount);
+
+                        currentMitu += 3;        // 現在の所持蜜を増やす
+                        Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                        Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+
                     }
 
+                    if(MituCount >= 20)
+                    {
+                        MituCount = 20;
+                        currentMitu = 20;
+                    }
                 }
+                
 
             }
 
             if (other.gameObject.name == "WhiteFlowers")
             {
-                // LeftShiftキー入力で
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+                if (MituCount < 20)
                 {
-                    MituCount += 1;
-                    Debug.Log("MituCount : " + MituCount);
+                    // LeftShiftキー入力で
+                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    {
+                        MituCount += 1;
+                        Debug.Log("MituCount : " + MituCount);
 
-                    currentMitu += 1;        // 現在の所持蜜を増やす
-                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
-                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+                        currentMitu += 1;        // 現在の所持蜜を増やす
+                        Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                        Debug.Log("所持蜜のslider.value = " + Mituslider.value);
 
-                    // 所持できるMituは15まで
+                    }
                     if (MituCount >= 20)
                     {
-                        return;
+                        MituCount = 20;
+                        currentMitu = 20;
+
                     }
 
                 }
 
             }
+
+
+
             if (other.gameObject.name == "BlueFlowers")
             {
-                // LeftShiftキー入力で
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+
+                if (MituCount < 20)
                 {
-                    MituCount += 5;
-                    Debug.Log("MituCount : " + MituCount);
+                    // LeftShiftキー入力で
+                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    {
+                        MituCount += 5;
+                        Debug.Log("MituCount : " + MituCount);
 
-                    currentMitu += 5;        // 現在の所持蜜を増やす
-                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
-                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+                        currentMitu += 5;        // 現在の所持蜜を増やす
+                        Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                        Debug.Log("所持蜜のslider.value = " + Mituslider.value);
 
-                    // 所持できるMituは15まで
+                    }
                     if (MituCount >= 20)
                     {
-                        return;
-                    }
+                        MituCount = 20;
+                        currentMitu = 20;
 
+                    }
                 }
+                    
 
             }
 
             if (other.gameObject.name == "PinkFlowers")
             {
-                // LeftShiftキー入力で
-                if (Input.GetKeyDown(KeyCode.LeftShift))
+                if(MituCount < 20)
                 {
-                    MituCount += 2;
-                    Debug.Log("MituCount : " + MituCount);
+                    // LeftShiftキー入力で
+                    if (Input.GetKeyDown(KeyCode.LeftShift))
+                    {
+                        MituCount += 2;
+                        Debug.Log("MituCount : " + MituCount);
 
-                    currentMitu += 2;        // 現在の所持蜜を増やす
-                    Mituslider.value = currentMitu;   // Sliderに現在HPを適用
-                    Debug.Log("所持蜜のslider.value = " + Mituslider.value);
+                        currentMitu += 2;        // 現在の所持蜜を増やす
+                        Mituslider.value = currentMitu;   // Sliderに現在HPを適用
+                        Debug.Log("所持蜜のslider.value = " + Mituslider.value);
 
-                    // 所持できるMituは15まで
+                    }
                     if (MituCount >= 20)
                     {
-                        return;
+                        MituCount = 20;
+                        currentMitu = 20;
                     }
-
                 }
-
             }
 
         }
@@ -164,8 +182,8 @@ public class PlayerController : MonoBehaviour
                     MituCount -= 1;
                     HoneyCount += 1;
 
-                    Debug.Log("MituCount : " + MituCount);
-                    Debug.Log("HoneyCount : " + HoneyCount);
+                    Debug.Log("MituCount : " + currentMitu);
+                    Debug.Log("HoneyCount : " + currentHoney);
 
                     currentMitu -= 1;        // 現在の所持蜜を減らす
                     Mituslider.value = currentMitu;   // Sliderに現在HPを適用
@@ -216,13 +234,6 @@ public class PlayerController : MonoBehaviour
             currentHoney -= damage;
             Honeyslider.value = currentHoney;
         }
-        //currentHoney -= damage;
-        //Honeyslider.value = currentHoney;
-
-        //if (currentHoney <= 0)
-        //{
-        //    return;
-        //}
 
         Debug.Log("はちみつ : " + currentHoney);
 
