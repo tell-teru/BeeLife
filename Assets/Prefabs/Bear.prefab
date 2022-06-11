@@ -127,6 +127,7 @@ MonoBehaviour:
   targetObject: {fileID: 4891387303264947104, guid: df877e5aba54545c680172009081b612, type: 3}
   distance: 0
   Pcon: {fileID: 0}
+  BearMove: 0
 --- !u!50 &-965118092164688344
 Rigidbody2D:
   serializedVersion: 4

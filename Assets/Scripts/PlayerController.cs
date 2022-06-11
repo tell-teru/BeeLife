@@ -26,6 +26,7 @@ public class PlayerController : MonoBehaviour
     // テキスト指定
     public Text HoneyText;
     public Text MituText;
+    public Text EneHPText;
 
 
 
@@ -194,7 +195,10 @@ public class PlayerController : MonoBehaviour
                 currentEneHP -= 1;
                 Debug.Log("敵HP : " + currentEneHP);
 
-                if(currentEneHP == 0)
+                EneHPText.text = "敵HP : " + currentEneHP.ToString("0");
+            
+
+            if (currentEneHP == 0)
                 {
                     Destroy(other.gameObject);
                     currentEneHP = 5;
