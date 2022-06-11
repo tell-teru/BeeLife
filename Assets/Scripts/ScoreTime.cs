@@ -14,7 +14,7 @@ public class ScoreTime : MonoBehaviour
     void Start()
     {
 
-        ScoreText.text = "経過時間 : " + Timer.minute.ToString("00") + ":" + ((int)Timer.seconds).ToString("00");
+        ScoreText.text ="はちみつ" + "\n" + "作成時間 : " + Timer.minute.ToString("00") + ":" + ((int)Timer.seconds).ToString("00");
 
     }
 
