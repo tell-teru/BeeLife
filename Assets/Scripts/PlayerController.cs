@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private int currentMitu;      // 蜂が持ってる蜜
     public Slider Mituslider;       // シーンに配置したSlider格納用
 
-    private const int maxHoney = 50;	// 蜂のもてる最大値を20とする
+    private const int maxHoney = 50;	// 巣のもてる最大値を20とする
     public static float currentHoney;
     public Slider Honeyslider;		// シーンに配置したSlider格納用
 
@@ -71,7 +71,7 @@ public class PlayerController : MonoBehaviour
             if(other.gameObject.name == "RedFlowers")
             {
 
-                if(MituCount < 20)
+                if(MituCount < maxMitu)
                 {
                     // LeftShiftキー入力で
                     if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -85,10 +85,10 @@ public class PlayerController : MonoBehaviour
 
                     }
 
-                    if(MituCount >= 20)
+                    if(MituCount >= maxMitu)
                     {
-                        MituCount = 20;
-                        currentMitu = 20;
+                        MituCount = maxMitu;
+                        currentMitu = maxMitu;
                     }
                 }
                 
@@ -97,7 +97,7 @@ public class PlayerController : MonoBehaviour
 
             if (other.gameObject.name == "WhiteFlowers")
             {
-                if (MituCount < 20)
+                if (MituCount < maxMitu)
                 {
                     // LeftShiftキー入力で
                     if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -110,10 +110,10 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("所持蜜のslider.value = " + Mituslider.value);
 
                     }
-                    if (MituCount >= 20)
+                    if (MituCount >= maxMitu)
                     {
-                        MituCount = 20;
-                        currentMitu = 20;
+                        MituCount = maxMitu;
+                        currentMitu = maxMitu;
 
                     }
 
@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
             if (other.gameObject.name == "BlueFlowers")
             {
 
-                if (MituCount < 20)
+                if (MituCount < maxMitu)
                 {
                     // LeftShiftキー入力で
                     if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -139,10 +139,10 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("所持蜜のslider.value = " + Mituslider.value);
 
                     }
-                    if (MituCount >= 20)
+                    if (MituCount >= maxMitu)
                     {
-                        MituCount = 20;
-                        currentMitu = 20;
+                        MituCount = maxMitu;
+                        currentMitu = maxMitu;
 
                     }
                 }
@@ -152,7 +152,7 @@ public class PlayerController : MonoBehaviour
 
             if (other.gameObject.name == "PinkFlowers")
             {
-                if(MituCount < 20)
+                if(MituCount < maxMitu)
                 {
                     // LeftShiftキー入力で
                     if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -165,10 +165,10 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("所持蜜のslider.value = " + Mituslider.value);
 
                     }
-                    if (MituCount >= 20)
+                    if (MituCount >= maxMitu)
                     {
-                        MituCount = 20;
-                        currentMitu = 20;
+                        MituCount = maxMitu;
+                        currentMitu = maxMitu;
                     }
                 }
             }
@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
                 
             }
 
-            if(currentHoney >= 50)
+            if(currentHoney >= maxHoney)
             {
                 // ToFinish関数を呼び出す
                 ToFinish();
