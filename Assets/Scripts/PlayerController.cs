@@ -30,7 +30,12 @@ public class PlayerController : MonoBehaviour
 
     public bool ABear;
 
-
+    [SerializeField]
+    [Tooltip("発生させるエフェクト(パーティクル)")]
+    private ParticleSystem particle;
+    //[SerializeField]
+    //[Tooltip("発生させるエフェクト2(パーティクル2)")]
+    //private ParticleSystem particle2;
 
     // Start is called before the first frame update
     void Start()
@@ -196,6 +201,11 @@ public class PlayerController : MonoBehaviour
                     currentHoney += 1;
                     Honeyslider.value = currentHoney;
                     Debug.Log("はちみつvalue = " + Honeyslider.value);
+
+                    // パーティクルシステムのインスタンスを生成する。
+                    ParticleSystem newParticle = Instantiate(particle);
+                    // パーティクルを発生させる。
+                    newParticle.Play();
                 }
                 
             }
@@ -241,6 +251,11 @@ public class PlayerController : MonoBehaviour
         {
             currentHoney -= damage;
             Honeyslider.value = currentHoney;
+
+            //// パーティクルシステムのインスタンスを生成する。
+            //ParticleSystem newParticle2 = Instantiate(particle2);
+            //// パーティクルを発生させる。
+            //newParticle2.Play();
         }
 
         Debug.Log("はちみつ : " + currentHoney);
